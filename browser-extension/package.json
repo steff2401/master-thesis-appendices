@@ -1,0 +1,17 @@
+{
+  "name": "webauthn-explorer",
+  "private": true,
+  "version": "1.0",
+  "description": "Intercepts and displays FIDO2/WebAuthn requests and responses, and provides a virtual authenticator with configurable flags",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/injected.js src/popup.js src/content.js --bundle --format=iife --outdir=dist"
+  },
+  "dependencies": {
+    "cborg": "^5.1.8",
+    "jsrsasign": "^11.1.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.1"
+  }
+}

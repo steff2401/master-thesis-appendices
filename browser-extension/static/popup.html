@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>WebAuthn Explorer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h1>WebAuthn Explorer</h1>
+  <div class="controls">
+    <button id="clear">Clear Logs</button>
+    <button id="export">Export JSON</button>
+    <button id="window-button"></button>
+  </div>
+
+  <details id="virtual-section">
+    <summary>Virtual Authenticator</summary>
+    <div class="virtual-content">
+      <label class="virtual-enable-label">
+        <input type="checkbox" id="virtual-enabled">
+        Enable virtual authenticator
+      </label>
+
+      <div id="flag-settings-section">
+        <div class="flag-settings-title">Flag Settings</div>
+        <div class="flag-settings-content">
+          <div id="flag-settings-fields"></div>
+        </div>
+      </div>
+
+      <div class="virtual-group-title">Stored Credentials</div>
+      <div id="virtual-credentials-list"></div>
+      <div id="virtual-credentials-empty" class="virtual-empty">No virtual credentials stored yet</div>
+    </div>
+  </details>
+
+  <div id="logs"></div>
+  <div id="logs-empty" class="empty">No WebAuthn events captured yet</div>
+
+  <template id="flag-table-template">
+    <table class="flag-settings-table">
+      <thead>
+        <tr><th>Flag</th><th>Value</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </template>
+
+  <template id="flag-row-template">
+    <tr>
+      <td class="flag-label"></td>
+      <td>
+        <select>
+          <option value="on">True</option>
+          <option value="off">False</option>
+        </select>
+      </td>
+    </tr>
+  </template>
+
+  <script src="../dist/popup.js"></script>
+</body>
+</html>
